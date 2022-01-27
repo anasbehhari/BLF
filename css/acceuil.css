@@ -1,0 +1,406 @@
+@import url("http://fonts.cdnfonts.com/css/sofia-pro");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Pro", sans-serif;
+}
+body.show-cart .cart {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+body .promo-notif {
+  position: relative;
+  width: 100%;
+  background-color: #231f20;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+body .filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #231f205d;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+body .cart {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 150px;
+  right: 50px;
+  width: 400px;
+  font-size: 0.7em;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 7px -2px #b8b8b8;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(50px);
+  transition: 0.3s opacity, 0.3s transform;
+}
+body .cart .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+body .cart .close i {
+  font-size: 18px;
+}
+body .cart .items {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e7e7e7;
+  height: auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+body .cart .items .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  margin-bottom: 30px;
+}
+body .cart .items .item:first-of-type {
+  margin-top: 10px;
+}
+body .cart .items .item .img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+body .cart .items .item .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+}
+body .cart .items .item .img .num {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #cfcfcf;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: smaller;
+  box-shadow: 0 0 7px -2px #b8b8b8;
+}
+body .cart .items .item .details {
+  position: relative;
+  margin-left: 20px;
+  width: calc(100% - 150px);
+}
+body .cart .items .item .details h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 17px;
+}
+body .cart .items .item .details h4 {
+  margin: 2px 0 0 0;
+  font-weight: 400;
+  color: #848484;
+  font-size: 14px;
+}
+body .cart .items .item .price {
+  font-weight: 600;
+  font-size: 14px;
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+body .cart .ttmenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+body .cart .ttmenu .dt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .cart .ttmenu .dt:first-of-type {
+  margin-bottom: 30px;
+}
+body .cart .ttmenu .dt h3 {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #848484;
+  font-size: 16px;
+}
+body .cart .ttmenu .dt .data {
+  font-weight: 600;
+  font-size: 14px;
+}
+body .cart .total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+body .cart .total .price {
+  font-size: 20px;
+  color: #231f20;
+}
+body .cart .btn {
+  position: relative;
+  background-color: #231f20;
+  color: #fff;
+  font-family: inherit;
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 2px solid #231f20;
+  transition: 0.1s background-color;
+}
+body .cart .btn:active {
+  background-color: transparent;
+  color: #231f20;
+}
+body header {
+  position: relative;
+  width: calc(100% - 100px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 0;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+body header .logo-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+body header .logo-section img {
+  width: 50px;
+}
+body header .cats {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+body header .cats li {
+  margin-right: 20px;
+  color: #231f20;
+}
+body header .cats li:last-of-type {
+  margin-right: 0;
+}
+body header .cats li a {
+  color: inherit;
+  text-decoration: none;
+}
+body header .cats li a:hover {
+  text-decoration: underline;
+}
+body header .search-cart-wishList {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+body header .search-cart-wishList .ls {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+body header .search-cart-wishList .ls:last-of-type {
+  margin-left: 0;
+}
+body header .search-cart-wishList .ls i {
+  font-size: 22px;
+}
+body header .search-cart-wishList .ls .num {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background-color: #e41f25;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+}
+body div.Jeans-coupes {
+  position: relative;
+  max-width: 1000px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body div.Jeans-coupes .Jean-coupe {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin-right: 20px;
+  color: #231f20;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body div.Jeans-coupes .Jean-coupe:hover img {
+  border-color: #231f20;
+}
+body div.Jeans-coupes .Jean-coupe:hover span {
+  opacity: 1;
+  font-weight: bold;
+}
+body div.Jeans-coupes .Jean-coupe img {
+  height: 80px;
+  width: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: 0.2s border-color;
+}
+body div.Jeans-coupes .Jean-coupe span {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #231f20;
+  opacity: 0.5;
+  transition: 0.2s opacity;
+}
+body .hero-section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+}
+body .hero-section::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+}
+body .hero-section img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+@media (max-width: 768px) {
+  body.show-cart .cart {
+    transform: translate(-50%, 0);
+  }
+  body.show-cart .filter {
+    opacity: 1;
+    pointer-events: all;
+  }
+  body .promo-notif {
+    font-size: small;
+    line-height: 1.5;
+  }
+  body .filter {
+    display: block;
+  }
+  body .cart {
+    max-width: calc(100% - 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+  body header {
+    width: 100%;
+  }
+  body header .logo-section {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  body header .logo-section img {
+    width: 50px;
+  }
+  body header .search-cart-wishList {
+    margin-right: 20px;
+  }
+  body header .cats {
+    display: none;
+  }
+  body div.Jeans-coupes {
+    max-width: 100%;
+    overflow: auto hidden;
+    justify-content: start;
+    padding: 20px 0;
+  }
+  body div.Jeans-coupes::-webkit-scrollbar {
+    height: 4px;
+  }
+  body div.Jeans-coupes::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  body div.Jeans-coupes::-webkit-scrollbar-thumb {
+    background: lightgray;
+  }
+  body div.Jeans-coupes::-webkit-scrollbar-thumb:hover {
+    background: #919090;
+  }
+  body div.Jeans-coupes .Jean-coupe {
+    margin-right: 0px;
+  }
+  body div.Jeans-coupes .Jean-coupe span {
+    width: 80px;
+    font-size: 10px;
+  }
+  body div.Jeans-coupes .Jean-coupe img {
+    width: 60px;
+    height: 60px;
+  }
+}/*# sourceMappingURL=acceuil.css.map */

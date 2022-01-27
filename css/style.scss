@@ -344,7 +344,7 @@ body {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      object-position: top;
+      object-position: 0 -250px;
       &.bn {
         object-position: center -100px;
       }
@@ -1487,6 +1487,11 @@ body {
 }
 @media (max-width: 1200px) {
   body {
+    .image-section {
+      img {
+        object-position: 0 -150px;
+      }
+    }
     .products-section-by-coupe {
       .categorie-coupe {
         .products {
@@ -1538,6 +1543,11 @@ body {
 }
 @media (max-width: 940px) {
   body {
+    .image-section {
+      img {
+        object-position: 0 -50px;
+      }
+    }
     .products-section-by-coupe {
       .categorie-coupe {
         .products {
